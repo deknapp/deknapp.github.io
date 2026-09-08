@@ -103,8 +103,7 @@
       <strong>0.826 pairwise accuracy</strong> on a season held out of training,
       against 0.700 for ordering by published FIS points and 0.496 for random.
       The kernel is what earns it — ignoring technique and distance costs 4.4
-      points. Fitting weights on top of it adds almost nothing, which is
-      reported rather than hidden.
+      points. Fitting weights on top of it adds almost nothing.
     </div>
     <div class="links">
       <a class="btn live" href="https://deknapp.github.io/xcpredict/"><span class="dot"></span> Open it</a>
@@ -156,12 +155,10 @@
       and a layer that decides — the agent never produces a number, only calls
       the tool that does.</p>
     <div class="finding">
-      The point is the <strong>retrospective validation harness</strong>: it
-      checks the negative set for bias <em>before</em> reporting any enrichment,
-      which is the step most published validations omit and the reason so many
-      enrichment figures fail to reproduce. Running the agent over real tasks
-      also found two bugs no unit test caught, including chemistry
-      — hypobromite esters — that would otherwise have shipped.
+      A <strong>retrospective validation harness</strong> that checks the
+      negative set for bias <em>before</em> reporting any enrichment. Running
+      the agent over real tasks found two bugs no unit test caught, including
+      chemistry — hypobromite esters — that would otherwise have shipped.
     </div>
     <p>The hosted demo is that computing layer with the agent taken off the
       front: profile a compound, run it past the structural alerts, and run the
@@ -184,14 +181,11 @@
     <div class="finding">
       Has an <strong>eval harness that traces every number in the generated
       prose back to the computed data</strong>. It caught the model writing "at
-      7,000 feet" about Santa Fe — correct, and not in the payload, which is
-      exactly the reflex that produces a confident wrong number somewhere it
-      knows less well.
+      7,000 feet" about Santa Fe — correct, and not in the payload.
     </div>
     <p>Pick anywhere on Earth and it computes all of that live. The narration
       layer is switched off in the hosted copy, so every line on the page is the
-      data itself — which is also the cheapest way to make the eval harness's
-      point.</p>
+      data itself.</p>
     <div class="links">
       <a class="btn live" href="https://huggingface.co/spaces/deknapp/climatelens"><span class="dot"></span> Open it</a>
       <a class="btn" href="https://github.com/deknapp/climatelens">Source</a>
@@ -212,10 +206,10 @@
       flows and ACS departure times, and is validated against NMDOT counts on
       stations held out of fitting.</p>
     <div class="finding">
-      It <strong>reports its own failure</strong>: the model carries a fraction
-      of measured traffic, and the README says so at the top with the reason.
-      Three bugs found along the way all shared a shape — a tool reporting
-      success while silently discarding most of its input.
+      The model carries a fraction of measured peak traffic, and the README
+      says so at the top with the reason. Three bugs found along the way shared
+      a shape — a tool reporting success while silently discarding most of its
+      input.
     </div>
     <div class="links"><a class="btn" href="https://github.com/deknapp/otowi">Source</a></div>
     <div class="stack"><span>SUMO</span><span>LODES</span><span>ACS</span><span>NMDOT</span><span>Python</span></div>
@@ -274,9 +268,6 @@
   </div>
 
   <footer>
-    <p>Every project above says what it cannot do as clearly as what it can.
-       That is deliberate: a model without an error bar, or an agent without an
-       evaluation harness, is a claim rather than a result.</p>
     <p><a href="mailto:nathaniel.knapp@gmail.com">nathaniel.knapp@gmail.com</a>
        · <a href="https://github.com/deknapp">github.com/deknapp</a></p>
   </footer>
