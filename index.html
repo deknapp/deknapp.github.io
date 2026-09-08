@@ -123,7 +123,7 @@
       analogue in training.</p>
     <div class="finding">
       The same random forest reads <strong>0.860 AUROC on a random split and
-      0.801 on a scaffold split</strong>. That 0.059 is the portion of the
+      0.794 on a scaffold split</strong>. That 0.066 is the portion of the
       apparent performance that was recognising molecules it had effectively
       already seen — and a random split is the default in most tutorials.
     </div>
@@ -149,10 +149,8 @@
     <div class="stack"><span>JavaScript</span><span>Open-Meteo</span><span>no build step</span></div>
   </div>
 
-  <h2>Work worth reading the code of</h2>
-
   <div class="card">
-    <h3><a href="https://github.com/deknapp/chilecule">chilecule</a></h3>
+    <h3><a href="https://huggingface.co/spaces/deknapp/chilecule">chilecule</a></h3>
     <p class="tagline">Agentic drug discovery on fully open-source tooling.</p>
     <p>RDKit, ChEMBL, AutoDock Vina and fpocket exposed as MCP tool servers
       driven by Claude agents, with a strict split between a layer that computes
@@ -166,9 +164,44 @@
       also found two bugs no unit test caught, including chemistry
       — hypobromite esters — that would otherwise have shipped.
     </div>
-    <div class="links"><a class="btn" href="https://github.com/deknapp/chilecule">Source</a></div>
+    <p>The hosted demo is that computing layer with the agent taken off the
+      front: profile a compound, run it past the structural alerts, and run the
+      validation harness yourself. No key, and nothing it tells you came from a
+      language model.</p>
+    <div class="links">
+      <a class="btn live" href="https://huggingface.co/spaces/deknapp/chilecule"><span class="dot"></span> Open it</a>
+      <a class="btn" href="https://github.com/deknapp/chilecule">Source</a>
+    </div>
     <div class="stack"><span>Claude Agent SDK</span><span>MCP</span><span>RDKit</span><span>docking</span><span>209 tests</span></div>
   </div>
+
+  <div class="card">
+    <h3><a href="https://huggingface.co/spaces/deknapp/climatelens">climatelens</a></h3>
+    <p class="tagline">What climate change has already done to one place on Earth.</p>
+    <p>Two thirty-year normals from ERA5 reanalysis with a bootstrapped interval
+      on the difference, five downscaled CMIP6 models for the 2040s each
+      differenced against its own baseline, and what El Niño winters have
+      actually done at that point over 77 years of NOAA's index.</p>
+    <div class="finding">
+      Has an <strong>eval harness that traces every number in the generated
+      prose back to the computed data</strong>. It caught the model writing "at
+      7,000 feet" about Santa Fe — correct, and not in the payload, which is
+      exactly the reflex that produces a confident wrong number somewhere it
+      knows less well.
+    </div>
+    <p>Pick anywhere on Earth and it computes all of that live. The narration
+      layer is switched off in the hosted copy, so every line on the page is the
+      data itself — which is also the cheapest way to make the eval harness's
+      point.</p>
+    <div class="links">
+      <a class="btn live" href="https://huggingface.co/spaces/deknapp/climatelens"><span class="dot"></span> Open it</a>
+      <a class="btn" href="https://github.com/deknapp/climatelens">Source</a>
+    </div>
+    <div class="stack"><span>FastAPI</span><span>ERA5</span><span>CMIP6</span><span>LLM evaluation</span></div>
+  </div>
+
+  <h2>Work worth reading the code of</h2>
+
 
   <div class="card">
     <h3><a href="https://github.com/deknapp/otowi">otowi</a></h3>
@@ -189,23 +222,6 @@
     <div class="stack"><span>SUMO</span><span>LODES</span><span>ACS</span><span>NMDOT</span><span>Python</span></div>
   </div>
 
-  <div class="card">
-    <h3><a href="https://github.com/deknapp/climatelens">climatelens</a></h3>
-    <p class="tagline">What climate change has already done to one place on Earth.</p>
-    <p>Two thirty-year normals from ERA5 reanalysis with a bootstrapped interval
-      on the difference, five downscaled CMIP6 models for the 2040s each
-      differenced against its own baseline, and what El Niño winters have
-      actually done at that point over 77 years of NOAA's index.</p>
-    <div class="finding">
-      Has an <strong>eval harness that traces every number in the generated
-      prose back to the computed data</strong>. It caught the model writing "at
-      7,000 feet" about Santa Fe — correct, and not in the payload, which is
-      exactly the reflex that produces a confident wrong number somewhere it
-      knows less well.
-    </div>
-    <div class="links"><a class="btn" href="https://github.com/deknapp/climatelens">Source</a></div>
-    <div class="stack"><span>FastAPI</span><span>ERA5</span><span>CMIP6</span><span>LLM evaluation</span></div>
-  </div>
 
   <h2>Experience</h2>
 
