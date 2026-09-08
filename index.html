@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nathan Knapp — scientific data systems &amp; agentic AI</title>
+<meta name="description" content="Software engineer, 8+ years in scientific data systems — six of them in drug discovery — most recently building production agentic AI. Santa Fe, New Mexico.">
+<style>
+  :root {
+    --bg:#faf9f7; --panel:#fff; --ink:#15181d; --muted:#66707d; --line:#e5e3dd;
+    --accent:#1d4ed8; --live:#15803d; --r:12px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#0f1115; --panel:#171a20; --ink:#e9ebee; --muted:#98a1ad;
+            --line:#262a32; --accent:#60a5fa; --live:#4ade80; }
+  }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { margin:0; background:var(--bg); color:var(--ink);
+         font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+         -webkit-font-smoothing:antialiased; }
+  a { color:var(--accent); text-decoration:none; }
+  a:hover { text-decoration:underline; }
+  .wrap { max-width:860px; margin:0 auto; padding:64px 22px 90px; }
+
+  header h1 { font-size:34px; margin:0 0 6px; letter-spacing:-.025em; }
+  header .role { font-size:18px; color:var(--muted); margin:0 0 18px; }
+  .lede { font-size:17px; max-width:62ch; margin:0 0 20px; }
+  .contact { display:flex; gap:16px; flex-wrap:wrap; font-size:14.5px; color:var(--muted); }
+
+  h2 { font-size:12.5px; text-transform:uppercase; letter-spacing:.08em;
+       color:var(--muted); margin:52px 0 16px; font-weight:600; }
+
+  .card { background:var(--panel); border:1px solid var(--line); border-radius:var(--r);
+          padding:20px 22px; margin-bottom:12px; }
+  .card h3 { font-size:18px; margin:0 0 4px; letter-spacing:-.01em; }
+  .card h3 a { color:var(--ink); }
+  .card .tagline { color:var(--muted); font-size:14px; margin:0 0 10px; }
+  .card p { margin:0 0 10px; font-size:15px; }
+  .card p:last-child { margin-bottom:0; }
+
+  .finding { border-left:2px solid var(--accent); padding-left:12px; margin:12px 0;
+             font-size:14.5px; color:var(--muted); }
+  .finding strong { color:var(--ink); }
+
+  .links { display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; }
+  .btn { display:inline-flex; align-items:center; gap:6px; padding:7px 13px;
+         font-size:13.5px; border-radius:8px; border:1px solid var(--line);
+         background:var(--bg); color:var(--ink); font-weight:500; }
+  .btn:hover { text-decoration:none; border-color:var(--accent); color:var(--accent); }
+  .btn.live { background:var(--accent); border-color:var(--accent); color:#fff; }
+  .btn.live:hover { color:#fff; opacity:.9; }
+  .dot { width:7px; height:7px; border-radius:50%; background:#fff; display:inline-block; }
+
+  .stack { font-size:13px; color:var(--muted); margin-top:10px; }
+  .stack span { display:inline-block; padding:2px 8px; border:1px solid var(--line);
+                border-radius:20px; margin:0 4px 4px 0; }
+
+  .job { display:grid; grid-template-columns:132px 1fr; gap:16px; margin-bottom:22px; }
+  .job .when { color:var(--muted); font-size:13.5px; padding-top:2px; }
+  .job h3 { font-size:16.5px; margin:0 0 2px; }
+  .job .where { color:var(--muted); font-size:14px; margin:0 0 7px; }
+  .job p { margin:0; font-size:15px; }
+  @media (max-width:640px) {
+    .job { grid-template-columns:1fr; gap:4px; }
+    .wrap { padding-top:40px; }
+    header h1 { font-size:28px; }
+  }
+
+  footer { margin-top:56px; padding-top:22px; border-top:1px solid var(--line);
+           font-size:14px; color:var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>Nathan Knapp</h1>
+    <p class="role">Software engineer — scientific data systems and agentic AI</p>
+    <p class="lede">Eight years building the data infrastructure computational
+      scientists depend on, six of them in drug discovery, most recently
+      building production agentic AI at a clinical-stage biotech. I care most
+      about the part everyone skips: whether the output is actually right.</p>
+    <div class="contact">
+      <span>Santa Fe, New Mexico</span>
+      <a href="mailto:nathaniel.knapp@gmail.com">nathaniel.knapp@gmail.com</a>
+      <a href="https://github.com/deknapp">GitHub</a>
+      <a href="https://www.linkedin.com/in/nathan-knapp-63012741">LinkedIn</a>
+    </div>
+  </header>
+
+  <h2>Things you can open right now</h2>
+
+  <div class="card">
+    <h3><a href="https://deknapp.github.io/xcpredict/">xcpredict</a></h3>
+    <p class="tagline">A learned ranking model over World Cup cross-country skiing,
+      and the database behind it.</p>
+    <p>Predicts race results from what each skier has done in <em>races like
+      this one</em> — same technique, similar distance, recently — with a
+      similarity kernel over 1,661 races and 79,725 results. Browse any of 809
+      athletes, see what each is actually best at, and drive the model yourself:
+      the controls recompute every prediction in your browser.</p>
+    <div class="finding">
+      <strong>0.826 pairwise accuracy</strong> on a season held out of training,
+      against 0.700 for ordering by published FIS points and 0.496 for random.
+      The kernel is what earns it — ignoring technique and distance costs 4.4
+      points. Fitting weights on top of it adds almost nothing, which is
+      reported rather than hidden.
+    </div>
+    <div class="links">
+      <a class="btn live" href="https://deknapp.github.io/xcpredict/"><span class="dot"></span> Open it</a>
+      <a class="btn" href="https://github.com/deknapp/xcpredict">Source</a>
+    </div>
+    <div class="stack"><span>Python</span><span>NumPy</span><span>learning to rank</span><span>SQLite</span><span>web scraping</span></div>
+  </div>
+
+  <div class="card">
+    <h3><a href="https://deknapp.github.io/herg_predictor/">hERG blocker prediction</a></h3>
+    <p class="tagline">A cardiotoxicity screen, and a demonstration of how much
+      of an ML score in drug discovery is an artefact of the data split.</p>
+    <p>11,059 compounds from ChEMBL, Morgan fingerprints, scaffold-split so that
+      chemical series are kept whole and a test compound never has a close
+      analogue in training.</p>
+    <div class="finding">
+      The same random forest reads <strong>0.860 AUROC on a random split and
+      0.801 on a scaffold split</strong>. That 0.059 is the portion of the
+      apparent performance that was recognising molecules it had effectively
+      already seen — and a random split is the default in most tutorials.
+    </div>
+    <div class="links">
+      <a class="btn live" href="https://deknapp.github.io/herg_predictor/"><span class="dot"></span> Open it</a>
+      <a class="btn" href="https://github.com/deknapp/herg_predictor">Source</a>
+    </div>
+    <div class="stack"><span>RDKit</span><span>scikit-learn</span><span>ChEMBL</span><span>cheminformatics</span></div>
+  </div>
+
+  <div class="card">
+    <h3><a href="https://deknapp.github.io/waxcast/">waxcast</a></h3>
+    <p class="tagline">Ski wax recommendations from the weather the snow has
+      actually seen.</p>
+    <p>Not the current temperature — the freeze-thaw history, time since
+      snowfall and humidity that decide what actually works, pulled live for
+      each Anchorage trail system. It says plainly when there is no snow and the
+      recommendation is hypothetical.</p>
+    <div class="links">
+      <a class="btn live" href="https://deknapp.github.io/waxcast/"><span class="dot"></span> Open it</a>
+      <a class="btn" href="https://github.com/deknapp/waxcast">Source</a>
+    </div>
+    <div class="stack"><span>JavaScript</span><span>Open-Meteo</span><span>no build step</span></div>
+  </div>
+
+  <h2>Work worth reading the code of</h2>
+
+  <div class="card">
+    <h3><a href="https://github.com/deknapp/chilecule">chilecule</a></h3>
+    <p class="tagline">Agentic drug discovery on fully open-source tooling.</p>
+    <p>RDKit, ChEMBL, AutoDock Vina and fpocket exposed as MCP tool servers
+      driven by Claude agents, with a strict split between a layer that computes
+      and a layer that decides — the agent never produces a number, only calls
+      the tool that does.</p>
+    <div class="finding">
+      The point is the <strong>retrospective validation harness</strong>: it
+      checks the negative set for bias <em>before</em> reporting any enrichment,
+      which is the step most published validations omit and the reason so many
+      enrichment figures fail to reproduce. Running the agent over real tasks
+      also found two bugs no unit test caught, including chemistry
+      — hypobromite esters — that would otherwise have shipped.
+    </div>
+    <div class="links"><a class="btn" href="https://github.com/deknapp/chilecule">Source</a></div>
+    <div class="stack"><span>Claude Agent SDK</span><span>MCP</span><span>RDKit</span><span>docking</span><span>209 tests</span></div>
+  </div>
+
+  <div class="card">
+    <h3><a href="https://github.com/deknapp/otowi">otowi</a></h3>
+    <p class="tagline">Traffic simulation for northern New Mexico, calibrated
+      against real count stations.</p>
+    <p>Most traffic simulations built outside transport agencies are an
+      OpenStreetMap network plus randomly generated trips — they animate
+      beautifully and mean nothing. Demand here comes from Census LODES commute
+      flows and ACS departure times, and is validated against NMDOT counts on
+      stations held out of fitting.</p>
+    <div class="finding">
+      It <strong>reports its own failure</strong>: the model carries a fraction
+      of measured traffic, and the README says so at the top with the reason.
+      Three bugs found along the way all shared a shape — a tool reporting
+      success while silently discarding most of its input.
+    </div>
+    <div class="links"><a class="btn" href="https://github.com/deknapp/otowi">Source</a></div>
+    <div class="stack"><span>SUMO</span><span>LODES</span><span>ACS</span><span>NMDOT</span><span>Python</span></div>
+  </div>
+
+  <div class="card">
+    <h3><a href="https://github.com/deknapp/climatelens">climatelens</a></h3>
+    <p class="tagline">What climate change has already done to one place on Earth.</p>
+    <p>Two thirty-year normals from ERA5 reanalysis with a bootstrapped interval
+      on the difference, five downscaled CMIP6 models for the 2040s each
+      differenced against its own baseline, and what El Niño winters have
+      actually done at that point over 77 years of NOAA's index.</p>
+    <div class="finding">
+      Has an <strong>eval harness that traces every number in the generated
+      prose back to the computed data</strong>. It caught the model writing "at
+      7,000 feet" about Santa Fe — correct, and not in the payload, which is
+      exactly the reflex that produces a confident wrong number somewhere it
+      knows less well.
+    </div>
+    <div class="links"><a class="btn" href="https://github.com/deknapp/climatelens">Source</a></div>
+    <div class="stack"><span>FastAPI</span><span>ERA5</span><span>CMIP6</span><span>LLM evaluation</span></div>
+  </div>
+
+  <h2>Experience</h2>
+
+  <div class="job">
+    <div class="when">2024 – 2026</div>
+    <div>
+      <h3>Informatics Developer II</h3>
+      <p class="where">Gate Bioscience — remote</p>
+      <p>Sole engineer on most projects. Built the company's agentic AI
+        capability from nothing: LLMs connected to internal databases and
+        analysis tools over MCP, with the tool interfaces, structured outputs
+        and grounding that let non-technical scientific staff rely on the
+        answers — and the evaluation loops that made that reliance defensible.
+        Architected the production PostgreSQL schema and the Python and R
+        pipelines on AWS, Docker and Nextflow behind it.</p>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="when">2020 – 2024</div>
+    <div>
+      <h3>Technical Developer II</h3>
+      <p class="where">OpenEye, Cadence Molecular Sciences — Santa Fe</p>
+      <p>Architected a configurable distributed search system over billion-scale
+        molecular databases in Go, Python and C++ — data representation,
+        indexing strategy and parallel query execution under latency
+        constraints. Led technical direction of a major product, translating
+        requirements from computational chemists and pharma customers into
+        shipped capability. Promoted twice.</p>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="when">2017 – 2019</div>
+    <div>
+      <h3>Earlier</h3>
+      <p class="where">SimScale · Stellar Science · Los Alamos National Laboratory</p>
+      <p>Meshing for a cloud simulation platform in Munich; C++ for US defence
+        and satellite analysis; subsurface flow simulation across LANL's HPC
+        clusters.</p>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="when">Education</div>
+    <div>
+      <h3>M.S. Computational Science &amp; Engineering</h3>
+      <p class="where">Technische Universität München, 2017 · B.S. Chemical
+        Engineering, Yale University, 2014</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>Every project above says what it cannot do as clearly as what it can.
+       That is deliberate: a model without an error bar, or an agent without an
+       evaluation harness, is a claim rather than a result.</p>
+    <p><a href="mailto:nathaniel.knapp@gmail.com">nathaniel.knapp@gmail.com</a>
+       · <a href="https://github.com/deknapp">github.com/deknapp</a></p>
+  </footer>
+
+</div>
+</body>
+</html>
