@@ -195,28 +195,33 @@
 
   <div class="card">
     <h3><a href="https://deknapp.github.io/otowi/">otowi</a></h3>
-    <p class="tagline">Traffic simulation for northern New Mexico, calibrated
-      against real count stations.</p>
+    <p class="tagline">Where and when driving in northern New Mexico kills
+      people — and a traffic simulation underneath it.</p>
     <p>Most traffic simulations built outside transport agencies are an
       OpenStreetMap network plus randomly generated trips — they animate
       beautifully and mean nothing. Demand here comes from Census LODES commute
       flows and ACS departure times, and is validated against NMDOT counts on
       stations held out of fitting.</p>
     <div class="finding">
-      The model carries a fraction of measured peak traffic, and the README
-      says so at the top with the reason. Three bugs found along the way shared
-      a shape — a tool reporting success while silently discarding most of its
-      input.
+      <strong>A kilometre driven at 3am is about nineteen times more likely to
+      kill someone than one driven at 8am</strong> — the rush hour is the
+      safest time on these roads. That needed both halves: a federal census of
+      fatal crashes for the numerator, and the simulation for the exposure
+      denominator, because nobody counts traffic by hour on every road.
     </div>
-    <p>The map is that calibration, open to inspect: switch between what the
-      model carries, what NMDOT actually measured, and the ratio between them
-      — the layer where the shortfall is visible link by link rather than as
-      one summary number.</p>
+    <p>A quarter of the people killed here were not in a car, 64% of them after
+      dark. The map ranks corridors by deaths per billion kilometres driven,
+      prefers a real traffic count to the model wherever one exists, and says
+      which it used — and it reports that only 12% of the deaths are on roads
+      that can be ranked at all.</p>
+    <p>The simulation carries 14% of measured traffic and the README says so at
+      the top. Five bugs found along the way shared one shape: a tool reporting
+      success while silently discarding most of its input.</p>
     <div class="links">
       <a class="btn live" href="https://deknapp.github.io/otowi/"><span class="dot"></span> Open it</a>
       <a class="btn" href="https://github.com/deknapp/otowi">Source</a>
     </div>
-    <div class="stack"><span>SUMO</span><span>LODES</span><span>ACS</span><span>NMDOT</span><span>Python</span></div>
+    <div class="stack"><span>SUMO</span><span>NHTSA FARS</span><span>Census LODES</span><span>NMDOT counts</span><span>Python</span></div>
   </div>
 
 
